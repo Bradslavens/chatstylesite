@@ -1,0 +1,22 @@
+{
+  "name": "chatstylesite",
+  "version": "1.0.0",
+  "description": "This website is in the style of chat, allowing users to get what they want quickly. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bradslavens/chatstylesite.git"
+  },
+  "author": "Brad Slavens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bradslavens/chatstylesite/issues"
+  },
+  "homepage": "https://github.com/Bradslavens/chatstylesite#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
