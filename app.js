@@ -5,17 +5,9 @@ app.use(express.static(__dirname))
 
 port = process.env.PORT
 
-var orderNumber = "";
+var orderNumber = "1";
 
-var order = [
-    { 
-        orderNumber: "0",
-        customerName: "Brad",
-        type: "return",
-        item: "Hat",
-        quantity: 1
-    }
-]
+var orders = {}
 
 var questions = [
     {
@@ -45,30 +37,29 @@ app.get("/", (req, res)=>{
 })
 
 app.get("/answer/:answer", (req,res)=>{
-    console.log(req.params)
     // start order
     if(req.params.answer === "I want to buy something") 
     {
         // start buy order
         let order = {
-            orderNumber: orderNumber,
             customerName: "",
             type: "buy",
             item: "",
             quantity: 0
         }
+        orders[orderNumber] = order
         orderNumber++
     }
     else if (req.params.answer === "I want to return something")
     {
         // start return order
         let order = {
-            orderNumber: orderNumber,
             customerName: "",
             type: "return",
             item: "",
             quantity: 0
         }
+        orders[orderNumber] = order
         orderNumber++
     }
     var item = questions.find(item => item.answer === req.params.answer)
